@@ -11,7 +11,7 @@ jobs:
       - name: Send Slack Notification
         uses: slackapi/slack-github-action@v2.0.0
         with:
-          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook: ${{ secrets.SLACK_NOTIFIER_WEBHOOK }}
           webhook-type: incoming-webhook
           payload: |
             text: "🚀 A new push was made to *main* branch by *${{ github.actor }}*!\nCommit: ${{ github.event.head_commit.message }}\n🔗 <${{ github.event.head_commit.url }}|View Commit>"
