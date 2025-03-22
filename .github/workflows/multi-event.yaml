@@ -1,0 +1,19 @@
+name: multi-event workflow
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull-request:
+    branches:
+      -main
+
+job:
+  test_multi_event:
+    steps:
+      -name: "echo basic info"
+      run: |
+          echo "REF: $GITHUB_REF"
+          echo "Job ID: $GITHUB_JOB"
+          echo "Action: $GITHUB_ACTION"
+          echo "Actor: $GITHUB_ACTOR"
