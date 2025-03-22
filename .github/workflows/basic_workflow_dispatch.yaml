@@ -1,0 +1,11 @@
+name: Basic Workflow Dispatch
+
+on:
+  workflow_dispatch
+
+jobs:
+  deploy:
+  runs-on: ubuntu-latest
+  steps:
+    - name: say sth
+      run: echo "the basic workflow dispatch for manully running workflow"
