@@ -10,4 +10,4 @@ jobs:
     steps:
       - name: At minute 48 past every 6th hour on day-of-month 22 in March.
         if: github.event.schedule == "48 */6 22 3 *"
-        run: echo "Reminding you to take a brush your teeth."
+        run: echo "Reminding you to brush your teeth."
