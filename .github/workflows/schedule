@@ -1,0 +1,13 @@
+name: Workflow trigger using Schedule
+on: 
+  schedule: 
+    - cron: "3 4 22 3 *"   # 09:48 AM NPT (04:03 AM UTC)
+    - cron: "3 16 22 3 *"  # 09:48 PM NPT (04:03 PM UTC)
+
+jobs:
+  test_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: At minute 48 past every 6th hour on day-of-month 22 in March.
+        if: github.event.schedule == "48 */6 22 3 *"
+        run: echo "Reminding you to take a brush your teeth."
